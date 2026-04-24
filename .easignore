@@ -1,6 +1,7 @@
 node_modules
 .git
 .expo
-dist
-build
+.vscode
 *.log
+*.zip
+*.rar
