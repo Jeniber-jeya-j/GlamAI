@@ -1,13 +1,8 @@
 node_modules
-.expo
+.git
 dist
 build
-android
-ios
-.git
+.expo
+npm-debug.log
+yarn-error.log
 *.log
-*.zip
-*.tar
-*.gz
-assets/videos
-assets/images-heavy
