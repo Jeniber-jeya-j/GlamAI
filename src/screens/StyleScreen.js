@@ -9,11 +9,12 @@ import {
   Image,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const STYLES = [
-  { icon: "🌸", name: "Elegant", desc: "Soft & luxury vibes" },
-  { icon: "🔥", name: "Bold", desc: "Statement & powerful" },
-  { icon: "⚡", name: "Trendy", desc: "Modern viral styles" },
+  { icon: "", name: "Elegant", desc: "Soft & luxury vibes" },
+  { icon: "", name: "Bold", desc: "Statement & powerful" },
+  { icon: "", name: "Trendy", desc: "Modern viral styles" },
 ];
 
 export default function StyleScreen({ navigation, route }) {
@@ -83,26 +84,24 @@ const images = styleMap[key] || [
           transform: [{ translateY: translateAnim }],
         }}
       >
-        {/* 🔥 HEADER */}
-        <View style={styles.topHeader}>
-          <LinearGradient
-            colors={["#2a133f", "#1a0d28"]}
-            style={styles.headerGradient}
-          >
-            <TouchableOpacity style={styles.iconBtn}>
-              <Text style={styles.iconText}>≡</Text>
-            </TouchableOpacity>
+        {/* --- HEADER --- */}
+      <View style={styles.header}>
+  {/* LEFT - MENU */}
+  <TouchableOpacity onPress={() => setIsMenuOpen(true)}>
+    <MaterialIcons name="menu" size={28} color="#e8c08c" />
+  </TouchableOpacity>
 
-            <Text style={styles.logo}>GlamAI</Text>
+  {/* CENTER - LOGO */}
+  <Text style={styles.logoText}>GlamAI</Text>
 
-            <TouchableOpacity style={styles.profileCircle}>
-              <Text style={{ color: "#fff" }}>👤</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-
-          {/* Curve */}
-          <View style={styles.curve} />
-        </View>
+  {/* RIGHT - PROFILE */}
+  <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+    <Image
+      source={require('../../assets/icon/icon.png')}
+      style={styles.avatarImg}
+    />
+  </TouchableOpacity>
+</View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
           {/* Header Text */}
@@ -177,14 +176,14 @@ const images = styleMap[key] || [
                 activeOpacity={0.9}
                 onPressIn={handlePressIn}
                 onPressOut={handlePressOut}
-                onPress={() => navigation.navigate("Result")}
+                onPress={() => navigation.navigate("Dashboard")}
               >
                 <LinearGradient
                   colors={["#e8c08c", "#5d4118"]}
                   style={styles.ctaBtn}
                 >
                   <Text style={styles.ctaBtnText}>
-                    Generate Look
+                    Accessory and makeup Suggestions
                   </Text>
                 </LinearGradient>
               </TouchableOpacity>
@@ -275,13 +274,32 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.05)",
     borderRadius: 100,
   },
+header: {
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+  paddingHorizontal: 16,
+  paddingVertical: 12,
+},
 
-  /* CONTENT */
-  header: {
-    padding: 20,
-    paddingTop: 20,
-  },
+logoText: {
+  position: "absolute",   
+  left: 0,
+  right: 0,
+  textAlign: "center",
+  color: "#e8c08c",
+  fontSize: 20,
+  fontWeight: "bold",
+},
 
+avatarImg: {
+  width: 40,
+  height: 40,
+  borderRadius: 20,
+  borderWidth: 2,
+  borderColor: "#e8c08c",
+},
+  
   tag: {
     color: "#f9abff",
     fontSize: 10,
