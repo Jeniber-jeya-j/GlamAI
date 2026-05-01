@@ -56,23 +56,23 @@ export default function StyleScreen({ navigation, route }) {
 
 const styleMap = {
   "Female-Party-Modern-Indian": [
-    require('../../assets/style/women indian party.webp'),
-    require('../../assets/style/women indian mordern.webp'),
-    require('../../assets/style/women ethnic fusion.webp'),
+    require('../../assets/style/womenindianparty.webp'),
+    require('../../assets/style/womenindianmordern.webp'),
+    require('../../assets/style/womenethnicfusion.webp'),
   ],
   "Female-Wedding-Bold-Western": [
-    require('../../assets/style/women wedding western.webp'),
-    require('../../assets/style/Women wedding fusion.webp'),
-    require('../../assets/style/women wedding asian.jpg'),
+    require('../../assets/style/womenweddingwestern.webp'),
+    require('../../assets/style/Womenweddingfusion.webp'),
+    require('../../assets/style/womenweddingasian.jpg'),
   ],
 };
 
 const key = `${selectedOptions?.Gender}-${selectedOptions?.Event}-${selectedOptions?.Type}-${selectedOptions?.Culture}`;
 
 const images = styleMap[key] || [
-  require('../../assets/style/women western bold casul.webp'),
-  require('../../assets/style/women minimalist.webp'),
-  require('../../assets/style/women indian party.webp'),
+  require('../../assets/style/womenwesternboldcasul.webp'),
+  require('../../assets/style/womenminimalist.webp'),
+  require('../../assets/style/womenindianparty.webp'),
 ];
 
   return (

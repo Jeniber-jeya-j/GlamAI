@@ -1,8 +1,10 @@
 node_modules
 .git
+.expo
 dist
 build
-.expo
-npm-debug.log
-yarn-error.log
 *.log
+*.tmp
+*.cache
+Thumbs.db
+.DS_Store
