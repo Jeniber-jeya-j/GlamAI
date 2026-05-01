@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 const RESULTS = [
   { icon: "👗", badge: "Outfit", name: "Silk Kanjivaram Saree", price: "₹4,500", store: "Myntra", url: "https://www.myntra.com" },
   { icon: "💎", badge: "Accessories", name: "Temple Jewellery Set", price: "₹2,200", store: "Amazon", url: "https://www.amazon.in" },
@@ -26,6 +27,7 @@ const RESULTS = [
 
 export default function ResultScreen({ route }) {
   const { event, style, budget } = route.params || {};
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -92,17 +94,20 @@ export default function ResultScreen({ route }) {
       {/* BOTTOM BAR */}
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.wishBtn}>
-          <Text style={styles.wishText}>♡ SAVE</Text>
+          <Text style={styles.wishText}>♡ SEE All</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.shopBtn}>
-          <LinearGradient
-            colors={["#e8c08c", "#5d4118"]}
-            style={styles.shopGradient}
-          >
-            <Text style={styles.shopText}>SHOP ALL</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+        <TouchableOpacity
+  style={styles.shopBtn}
+  onPress={() => navigation.navigate("Home")}
+>
+  <LinearGradient
+    colors={["#e8c08c", "#5d4118"]}
+    style={styles.shopGradient}
+  >
+    <Text style={styles.shopText}>SAVE</Text>
+  </LinearGradient>
+</TouchableOpacity>
       </View>
     </SafeAreaView>
   );
