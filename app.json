@@ -26,11 +26,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "owner": "jeniber_jeya_j12",
-    "extra": {
-      "eas": {
-        "projectId": "fef03c40-c74e-4b34-b858-bbffe41a7950"
-      }
-    }
+    "owner": "jeniber_jeya_j12"
   }
 }
