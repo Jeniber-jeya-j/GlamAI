@@ -69,7 +69,7 @@ package.json
 ![Style Screen](assets/screenshots/Style.png)
 
 ### Result Screen
-![Result Screen](assets/screenshots/result.png)
+![Result Screen](assets/screenshots/Result.png)
 
 ### Shop Screen
 ![Shop Screen](assets/screenshots/Shop.png)
